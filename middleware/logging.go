@@ -22,7 +22,7 @@ func RequestLogger() gin.HandlerFunc {
 		path := c.Request.URL.Path
 
 		t := time.Now()
-		c.Next()
+		c.Next() // this hands off to the next handler in the chain 
 		latency := float32(time.Since(t).Seconds())
 		status := c.Writer.Status()
 
