@@ -19,7 +19,7 @@ func TimeSomething() {
 	start := time.Now()
 	time.Sleep(1 * time.Second)
 	// we opt to include which app, which function call, and then the time elapsed
-	log.Info().Str("App", "logtest").Str("Call", "TimeSomething").Msgf("%v", time.Since(start))
+	log.Info().Str("App", "logtest").Str("Call", "TimeSomething").Float32("Duration", float32(time.Since(start).Seconds())).Msg("")
 
 	// this is how we'd log an error including app and function call name
 	log.Error().Err(errors.New("this is an error")).Str("App", "logtest").Str("Call", "TimeSomething").Msg("error")
