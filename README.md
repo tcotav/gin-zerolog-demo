@@ -1,8 +1,10 @@
-## Gin + Zerolog quick demo
+## Gin + Zerolog + Viper Starter Template
 
-How to replace the default Gin logger with Zerolog.
-
-Also how to time duration of a call out to a third party service and record it in a log. (Though arguably, you should be using a metrics library for this instead of logging.)
+- replace the default Gin logger with Zerolog
+- set up JSON logging with Zerolog including request logging
+- provide examples of logging in modules and in handlers (though you should probably only log in handlers)
+- use Viper to read config from a file
+- time duration of a call out to a third party service and record it in a log. (Though arguably, you should be using a metrics library for this instead of logging.)
 
 ```console
 ❯ go run cmd/log/main.go 
