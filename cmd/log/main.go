@@ -27,13 +27,13 @@ func main() {
 
 	// hack in some dummy handler
 	router.GET("/ping", func(c *gin.Context) {
-		s, err := data.GetThing(c.Request.Context())
+		s, err := data.GetThing()
 		if err != nil {
 			log.Error().Err(err).Str("App", ServiceName).Str("Call", "ping").Msg("Error in main getting thing")
 		}
 		log.Info().Str("thing", s).Str("App", ServiceName).Str("Call", "ping").Msg("Got thing")
 
-		data.TimeSomething(c.Request.Context())
+		data.TimeSomething()
 
 		c.JSON(200, gin.H{
 			"message": "pong",
